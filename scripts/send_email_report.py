@@ -5,11 +5,13 @@ from email.mime.multipart import MIMEMultipart
 from datetime import datetime, timedelta
 
 # ================= CONFIGURATION =================
-# TODO: Fill in your email credentials
+# 1. Go to: https://myaccount.google.com/apppasswords
+# 2. Add an app named "HKEX Downloader"
+# 3. Copy the 16-character password below
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 SENDER_EMAIL = "your_email@gmail.com"
-SENDER_PASSWORD = "your_app_password"  # Use App Password for Gmail
+SENDER_PASSWORD = ""  # Paste the 16-character App Password here
 RECEIVER_EMAIL = "your_email@gmail.com"
 
 # The directory where IPO documents are saved
