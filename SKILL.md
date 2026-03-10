@@ -21,17 +21,28 @@ To use this skill, follow these steps:
     - **Display Documents (展示文件)**: All associated PDFs are downloaded with their original Chinese titles.
 5. **PDF Extraction**: The skill handles both direct PDF links and "(多檔案)" index pages (`_c.htm`) by crawling them recursively.
 
+6. **Scheduling**:
+    - **Download**: Runs every Saturday at 20:00 (8 PM).
+    - **Report**: Sends a weekly summary email every Monday at 10:00 AM.
+
 ## Resource Usage
 
 ### scripts/download_ipo_files.py
+The main downloader.
 
-This is the main entry point for the automation. To run the full downloader:
+### scripts/send_email_report.py
+Generates and sends the weekly email report. **Required**: Configure `SENDER_EMAIL` and `SENDER_PASSWORD` (App Password) inside the script before use.
 
-```bash
-python3 scripts/download_ipo_files.py
-```
+### scripts/setup_schedule.sh
+Automates the creation of macOS `launchd` tasks for both scripts.
 
-It uses Playwright for browser automation and directly saves PDFs to the local filesystem.
+## Scheduling Setup
+
+1. Open `scripts/send_email_report.py` and enter your email and App Password.
+2. Run the setup script:
+   ```bash
+   bash scripts/setup_schedule.sh
+   ```
 
 ## Sample Triggers
 
