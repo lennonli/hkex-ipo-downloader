@@ -5,7 +5,8 @@ import urllib.parse
 from datetime import datetime
 from playwright.sync_api import sync_playwright
 
-BASE_DIR = '/Users/licheng/Documents/港股IPO自动文档'
+# Default save directory: creating a 'downloads' folder in the same directory as the script
+BASE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'downloads')
 if not os.path.exists(BASE_DIR):
     os.makedirs(BASE_DIR)
 
